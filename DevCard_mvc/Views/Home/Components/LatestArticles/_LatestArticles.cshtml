@@ -1,0 +1,36 @@
+﻿@model List<Article>
+<article class="section-cards">
+    <section class="cards-section-title">
+        <div class="row appear">
+            <div class="col-md-6">
+                <h1>قدرت حقیقی دانش است</h1>
+            </div>
+            <div class="col-md-6">
+                <h4>ایده های بزرگ با آموزشی با کیفیت و اصولی رخ می دهد. آموزشی با کیفیت برای رهبران فردا</h4>
+            </div>
+        </div>
+    </section>
+    <section class="cards-section-body">
+        <div class="row">
+            @foreach (var articles in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-3 appear d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url(images/@articles.Image)">
+                            <div class="card-shadow"></div>
+                        </div>
+                        <div class="card-overlay">
+                            <h3 class="card-title"> @articles.Title</h3>
+                            <a href="#" class="card-link">
+                                <div class="card-icon">
+                                    <i class="bi bi-arrow-left-short"></i>
+                                </div> @articles.Description
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+</article>

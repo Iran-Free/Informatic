@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DevCard_mvc.Models.Project>
+
+<article id="school-body" class="school-body">
+
+    @foreach (var project in Model)
+    {
+        <section>
+            <div dir="ltr" class="row w-100 d-flex justify-content-between">
+                <div class="col-12 col-lg-6 appear">
+                    <div class="img-school">
+                        <img src="~/images/@project.Image" alt="learning">
+                    </div>
+                </div>
+                <div dir="rtl" class="col-12 col-lg-6 appear">
+                    <div class="text-school mt-4 mt-lg-0">
+                        <h1>
+                            @project.Name <span> @project.Title</span>
+                        </h1>
+                        <p>@project.Description </p>
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text"> @project.Client</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</article>
