@@ -1,5 +1,6 @@
 ﻿
 
+@model Contact
 
 <main id="contact-page">
 
@@ -22,26 +23,28 @@
                                             <div id="form-message-success" class="mb-4">
                                                 پیام شما ارسال شد! با سپاس
                                             </div>
-                                            <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                            <form method="POST" id="contactForm" name="contactForm" class="contactForm" asp-action="Contact">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="name" id="name" placeholder="نام">
+                                                            <input type="text" class="form-control" asp-for="Name" placeholder="نام">
+                                                            <span asp-validation-for="Name"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="ایمیل">
+                                                            <input type="email" class="form-control" asp-for="Email" placeholder="ایمیل">
+                                                            <span asp-validation-for="Email"> </span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="موضوع">
+                                                            <input type="text" class="form-control" asp-for="Subject" placeholder="موضوع">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="پیام"></textarea>
+                                                            <textarea  class="form-control" asp-for="Message" cols="30" rows="6" placeholder="پیام"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
